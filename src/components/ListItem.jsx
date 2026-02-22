@@ -2,7 +2,7 @@ export default function ListItem({ name, text, image , style }) {
   return (
     <div>
       <div className="row" style={style}>
-        <img width="40" height="40" src={image} alt={name} />
+        <img  src={image} alt={name} />
 
         <div className="content">
           <div>{name}</div>

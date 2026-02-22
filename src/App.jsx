@@ -1,13 +1,13 @@
 import { loremIpsum } from "lorem-ipsum";
 import "./App.css";
 import ListItem from "./components/ListItem";
-import { List } from "react-virtualized";
+import { List , AutoSizer } from "react-virtualized";
 
 export default function App() {
   const rowCount = 5000;
-  const listHight = 500;
+  // const listHight = 500;
   const rowHeight = 50;
-  const rowWidth = 700;
+  // const rowWidth = 700;
 
   const list = Array(rowCount)
     .fill()
@@ -43,13 +43,18 @@ export default function App() {
     <div className="App">
       <div className="list">
 
-        <List 
-           width={rowWidth}
-           height={listHight}
+        <AutoSizer>
+          {({width, height}) => (
+            <List 
+           width={width}
+           height={height}
            rowHeight={rowHeight}
            rowCount={rowCount}
            rowRenderer={renderRow}
+           overscanColumnCount={5}
         />
+          )}
+        </AutoSizer>
 
         
       </div>
