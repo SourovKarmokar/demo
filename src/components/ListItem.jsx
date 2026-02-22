@@ -1,16 +1,14 @@
-export default function ListItem() {
-    return (
-        <div>
-            <div className="row">
-                <img src="https://image-placeholder.com/images/actual-size/75x100.png" alt="Itemname" />
-            </div>
-            <div className="content">
-                <div>Item name</div>
-                <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, quisquam?
-                </div>
+export default function ListItem({ name, text, image , style }) {
+  return (
+    <div>
+      <div className="row" style={style}>
+        <img width="40" height="40" src={image} alt={name} />
 
-            </div>
+        <div className="content">
+          <div>{name}</div>
+          <div>{text}</div>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
